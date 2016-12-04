@@ -51,9 +51,24 @@ add_event(document.getElementById('il_zig_zig_auto'),'click',function(e){
 });
 
 /* event for sliding out the settings ------ */
-add_event(document.getElementById('il_settings'),'click',function(e){
+add_event(document.getElementById('settings_toggle'),'click',function(e){
 	var ele=document.getElementById('settings');
 	if(ele)class_toggle(ele,'closed');
+});
+
+/* event for sliding out the settings ------ */
+add_event(document.getElementById('settings_color'),'click',function(e){
+	preventEvent(e);
+	if(class_exists(document.body,'colored')){
+		class_remove(document.body,'colored');
+		class_remove(e.srcElement,'active');
+		e.srcElement.innerHTML='Theme - Black and White';
+	}else{
+		class_add(document.body,'colored');
+		class_add(e.srcElement,'active');
+		e.srcElement.innerHTML='Theme - Colors';
+	}
+
 });
 
 /* event for closing the settings menu ------ */
@@ -68,10 +83,15 @@ add_event(document.getElementById('settings_close'),'click',function(e){
 /* event for toggling the settings menu modal state ----- */
 add_event(document.getElementById('settings_modal'),'click',function(e){
 	preventEvent(e);
-	class_toggle(e.srcElement,'active');
 	var ele=document.getElementById('settings');
 	if(ele){
-		class_toggle(ele,'modal');
+		if(class_exists(ele,'modal')){
+			class_remove(ele,'modal');
+			class_remove(e.srcElement,'active');
+		}else{
+			class_add(ele,'modal');
+			class_add(e.srcElement,'active');
+		} 
 	}
 });
 

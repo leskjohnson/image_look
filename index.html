@@ -26,6 +26,10 @@
 				}
 			};
 		</script>
+
+		<!-- viewport setting for proper mobile device scaling -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes"/>
+
 	</head>
 
 <!-- Body _________________________________________________ -->
@@ -47,67 +51,73 @@
 			<!-- clear canvas and reset the stroke start position -->
 			<button id="il_clear"class="">Clear</button>
 			<!-- open settings menu -->
-			<button id="il_settings"class="">Settings</button>
 		
 		</div>
 
 		<hr>
 
 		<!-- settings form -->
-		<form id="settings" class="settings modal closed">
+		<form id="settings" class="settings closed">
 
-			<!-- zig zag automatic creation amount -->
-			<div class="input">
-				<label for="zigzag_size">Background Color</label>
-				<select id="zigzag_bg" name="zigzag_bg">
-					<option value="white">White</option>
-					<option value="black">Black</option>
-					<option value="red">Red</option>
-					<option value="green">Green</option>
-					<option value="blue">Blue</option>
-					<option value="purple">Purple</option>
-					<option value="pink">Pink</option>
-					<option value="yellow">Yellow</option>
-				</select>
-			</div>
+			<!-- list of form elements for adding scrolling -->
+			<div class="list">
 
-			<!-- zig zag automatic creation amount -->
-			<div class="input">
-				<label for="zigzag_line">Line Color</label>
-				<select id="zigzag_line" name="zigzag_line">
-					<option value="white">White</option>
-					<option value="black">Black</option>
-					<option value="red">Red</option>
-					<option value="green">Green</option>
-					<option value="blue">Blue</option>
-					<option value="purple">Purple</option>
-					<option value="pink">Pink</option>
-					<option value="yellow">Yellow</option>
-				</select>
-			</div>
+				<!-- zig zag automatic creation amount -->
+				<div class="input">
+					<label for="zigzag_size">Background Color</label>
+					<select id="zigzag_bg" name="zigzag_bg">
+						<option value="white">White</option>
+						<option value="black">Black</option>
+						<option value="red">Red</option>
+						<option value="green">Green</option>
+						<option value="blue">Blue</option>
+						<option value="purple">Purple</option>
+						<option value="pink">Pink</option>
+						<option value="yellow">Yellow</option>
+					</select>
+				</div>
 
-			<!-- zig zag automatic creation delay -->
-			<div class="input">
-				<label for="zigzag_speed">Zig Zag Speed</label>
-				<input id="zigzag_speed" name="zigzag_speed" type="range" />
-			</div>
+				<!-- zig zag automatic creation amount -->
+				<div class="input">
+					<label for="zigzag_line">Line Color</label>
+					<select id="zigzag_line" name="zigzag_line">
+						<option value="white">White</option>
+						<option value="black">Black</option>
+						<option value="red">Red</option>
+						<option value="green">Green</option>
+						<option value="blue">Blue</option>
+						<option value="purple">Purple</option>
+						<option value="pink">Pink</option>
+						<option value="yellow">Yellow</option>
+					</select>
+				</div>
 
-			<!-- zig zag automatic creation amount -->
-			<div class="input">
-				<label for="zigzag_amount">Zig Zag Amount</label>
-				<input id="zigzag_amount" name="zigzag_amount" type="range" />
-			</div>
+				<!-- zig zag automatic creation delay -->
+				<div class="input">
+					<label for="zigzag_speed">Zig Zag Speed</label>
+					<input id="zigzag_speed" name="zigzag_speed" type="range" />
+				</div>
 
-			<!-- zig zag size amount -->
-			<div class="input">
-				<label for="zigzag_size">Zig Zag Size</label>
-				<input id="zigzag_size" name="zigzag_size" type="range" />
-			</div>
+				<!-- zig zag automatic creation amount -->
+				<div class="input">
+					<label for="zigzag_amount">Zig Zag Amount</label>
+					<input id="zigzag_amount" name="zigzag_amount" type="range" />
+				</div>
 
-			<!-- setting action buttons -->
-			<div class="buttons">
-				<button id="settings_close" class="close">Close</button>
-				<button id="settings_modal" class="modal active">Modal</button>
+				<!-- zig zag size amount -->
+				<div class="input">
+					<label for="zigzag_size">Zig Zag Size</label>
+					<input id="zigzag_size" name="zigzag_size" type="range" />
+				</div>
+
+				<!-- setting action buttons -->
+				<div class="buttons">
+					<button id="settings_close" class="close">Close</button>
+
+					<button id="settings_color">Theme - Black and White</button>
+
+					<button id="settings_modal" class="modal">Fullscreen</button>
+				</div>
 			</div>
 
 		</form>
@@ -115,7 +125,7 @@
 		<hr>
 
 		<div class="buttons">
-			<button onclick="preventEvent(event);class_toggle(this,'active');class_toggle(document.body,'colored');">
+			<button id="settings_toggle"class="toggle">Settings</button>
 		</div>
 	</body>
 
