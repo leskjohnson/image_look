@@ -56,18 +56,23 @@ add_event(document.getElementById('il_settings'),'click',function(e){
 	if(ele)class_toggle(ele,'closed');
 });
 
-/* event for closing the settings menu with the no button ------ */
-add_event(document.getElementById('zigzag_no'),'click',function(e){
+/* event for closing the settings menu ------ */
+add_event(document.getElementById('settings_close'),'click',function(e){
 	preventEvent(e);
 	var ele=document.getElementById('settings');
-	if(ele)class_add(ele,'closed');
+	if(ele){
+		class_add(ele,'closed');
+	}
 });
 
-/* event for closing the settings menu with the yes button ----- */
-add_event(document.getElementById('zigzag_yes'),'click',function(e){
+/* event for toggling the settings menu modal state ----- */
+add_event(document.getElementById('settings_modal'),'click',function(e){
 	preventEvent(e);
+	class_toggle(e.srcElement,'active');
 	var ele=document.getElementById('settings');
-	if(ele)class_add(ele,'closed');
+	if(ele){
+		class_toggle(ele,'modal');
+	}
 });
 
 /* zig zag function for creating a recurring event -------------------------*/

@@ -39,19 +39,25 @@ body h1 {
 
 form#settings {
     background-color: rgba(0,0,0,0.8);
-    border-radius: 0 10px 0 0;
     box-shadow: 0px 0px 5rem 1rem #000 inset,0 0 4rem -0.6rem #000;
 }
 .settings {
     position: fixed;
+	left:0%;
     bottom: 0;
-	transition: right 1s;
-	right:48%;
 	width:50%;
+	height:50%;
+	-webkit-transition:left 1s,width 1s,height 1s,bottom 1s,padding 1s,border-radius 1s;
+	-moz-transition:left 1s,width 1s,height 1s,bottom 1s,padding 1s,border-radius 1s;
+	-ms-transition:left 1s,width 1s,height 1s,bottom 1s,padding 1s,border-radius 1s;
+	-o-transition:left 1s,width 1s,height 1s,bottom 1s,padding 1s,border-radius 1s;
+	transition:left 1s,width 1s,height 1s,bottom 1s,padding 1s,border-radius 1s;
+    border-radius: 0 10px 0 0;
 }
-.settings.closed{right:100%;}
-
-
+.settings.closed{left:-55%;}
+.settings.modal{left:2%;width:96%;bottom:2%;height:96%;padding:0;border-radius:20px;}
+.settings.modal .input{margin-top:20px;}
+.settings.modal.closed{left:-105%;}
 
 .buttons button {
     background-color: #000;
@@ -59,11 +65,13 @@ form#settings {
     color: #FFF;
     box-shadow: 0 0 10px #FFF inset,0 0 10px #000;
     cursor:pointer;
+    outline:none;
 }
-.buttons button:focus{box-shadow:0 0 30px #8c8c8c inset;background-color:#444444;}
-.buttons button.active{box-shadow: 0 0 10px #FFF inset,0 0 20px #000 inset;background-color:green;}
-.buttons button.no{background-color:red;float:left;}
+.buttons button.no,.buttons button.close{background-color:red;float:left;}
 .buttons button.yes{background-color:green;float:right;}
+.buttons button.modal{float:right;background-color:orange;}
+.buttons button:focus{box-shadow:0 0 30px #8c8c8c inset;background-color:#444444;}
+.buttons button.active {box-shadow:0 0 10px #949494 inset,0 0 40px #059c00 inset;background-color:#1b4419;border:1px solid #000;}
 
 .input {
     background-color: gray;
@@ -71,6 +79,11 @@ form#settings {
     border-radius: 5px;
     box-shadow: 0 0 10px -2px #4c2d80,0 0 45px #000 inset;
     padding: 5px 0;
+	-webkit-transition:margin 1s;
+	-moz-transition:margin 1s;
+	-ms-transition:margin 1s;
+	-o-transition:margin 1s;
+	transition:margin 1s;
 }
 .input input, .input label, .input select {
     display: inline-block;

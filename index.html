@@ -54,7 +54,7 @@
 		<hr>
 
 		<!-- settings form -->
-		<form id="settings" class="settings closed">
+		<form id="settings" class="settings modal closed">
 
 			<!-- zig zag automatic creation amount -->
 			<div class="input">
@@ -104,9 +104,10 @@
 				<input id="zigzag_size" name="zigzag_size" type="range" />
 			</div>
 
+			<!-- setting action buttons -->
 			<div class="buttons">
-				<button id="zigzag_no" class="no">No</button>
-				<button id="zigzag_yes" class="yes">Yes</button>
+				<button id="settings_close" class="close">Close</button>
+				<button id="settings_modal" class="modal active">Modal</button>
 			</div>
 
 		</form>
@@ -116,11 +117,15 @@
 	</body>
 
 <!-- JavaScript ___________________________________________ -->
+	<!-- these are functions for binding events and changing class names on elements -->
 	<script type="text/javascript" src="fnc.js"></script>
+	<!-- these are the events bound to the html elements -->
 	<script type="text/javascript" src="evt.js"></script>
+	<!-- this is the image_look prototype -->
 	<script type="text/javascript" src="image_look.js"></script>
 
 <!-- CSS __________________________________________________ -->
+	<!-- the styles to make all the elements work and look aesthetically pleasing -->
 	<link rel="stylesheet" type="text/css" href="image_look.css">
 
 </html>
