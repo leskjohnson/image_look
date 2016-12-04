@@ -60,9 +60,10 @@ form#settings {
     box-shadow: 0 0 10px #FFF inset,0 0 10px #000;
     cursor:pointer;
 }
+.buttons button:focus{box-shadow:0 0 30px #8c8c8c inset;background-color:#444444;}
 .buttons button.active{box-shadow: 0 0 10px #FFF inset,0 0 20px #000 inset;background-color:green;}
-.buttons button.no{background-color:red;}
-.buttons button.yes{background-color:green;}
+.buttons button.no{background-color:red;float:left;}
+.buttons button.yes{background-color:green;float:right;}
 
 .input {
     background-color: gray;
