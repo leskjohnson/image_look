@@ -74,12 +74,16 @@ body.colored h1{background-color: #5767ff;}
     z-index: 1;
 }
 body.colored #settings{background-color:rgba(39,0,255,0.95);}
-@media (max-width:500px){
-	body #settings{width:96%;border-radius:0;padding:2% 2%;}
-	body #settings.modal{height: 94%;width:94%;border-radius:20px;}
+@media (max-width:767px){
+	body #settings{width:100%;}
+	body #settings.modal{width:96%;}
 	body #settings.closed{width:100%;left:105%}
-	body .buttons button{width:100%;border-radius:20px;margin-bottom:5px;}
 	body #settings .list{overflow-y:scroll;height:100%;}
+}
+@media (max-width:500px){
+	body .buttons button{width:100%;border-radius:15px;margin-bottom:5px;}
+	body #image_look{max-height:100%;width:80%;}
+	body #settings.modal{height:94%;}
 }
 
 .settings {
@@ -97,7 +101,7 @@ body.colored #settings{background-color:rgba(39,0,255,0.95);}
     padding: 5px 0;
 }
 .settings.closed{left:-55%;}
-.settings.modal{left:2%;width:96%;bottom:2%;height:96%;border-radius:20px;}
+.settings.modal{left:2%;bottom:2%;width:96%;height:94%;border-radius:20px;}
 .settings.modal .input{margin:1rem 2%;width:96%;padding:1rem 0;}
 .settings.modal.closed{left:-105%;}
 body.colored .settings .input {background-color: rgba(0,183,255,0.9);}
