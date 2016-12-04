@@ -1,7 +1,9 @@
 /* event for when the window loads ------------------------------------- */
 add_event(window,'load',function(e){
 
-	il=new image_look(settings.canvas) /* create the image_look prototype */	
+	/* create the image_look prototype */	
+	il=new image_look(settings.canvas) 
+	
 	/* setup the colors */
 	il.bg=settings.colors.bg;
 	il.line=settings.colors.line;
@@ -14,9 +16,6 @@ add_event(window,'load',function(e){
 		zigzagloop();
 		document.getElementById('il_zig_zig_auto').className='active';
 	}
-
-	// var eles=document.querySelector('body .buttons');
-	// for(var i=0;i<eles.length;i++){}
 
 });		
 
@@ -53,7 +52,22 @@ add_event(document.getElementById('il_zig_zig_auto'),'click',function(e){
 
 /* event for sliding out the settings ------ */
 add_event(document.getElementById('il_settings'),'click',function(e){
-	class_toggle(document.getElementById('settings'),'closed');
+	var ele=document.getElementById('settings');
+	if(ele)class_toggle(ele,'closed');
+});
+
+/* event for closing the settings menu with the no button ------ */
+add_event(document.getElementById('zigzag_no'),'click',function(e){
+	preventEvent(e);
+	var ele=document.getElementById('settings');
+	if(ele)class_add(ele,'closed');
+});
+
+/* event for closing the settings menu with the yes button ----- */
+add_event(document.getElementById('zigzag_yes'),'click',function(e){
+	preventEvent(e);
+	var ele=document.getElementById('settings');
+	if(ele)class_add(ele,'closed');
 });
 
 /* zig zag function for creating a recurring event -------------------------*/

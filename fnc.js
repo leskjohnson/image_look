@@ -18,3 +18,4 @@ function class_exists(ele,className){return new RegExp(' '+className+' ').test('
 function class_add(ele,className){if(!class_exists(ele,className))ele.className+=' '+className;};
 function class_remove(ele,className){var newClass=' '+ele.className.replace(/[\t\r\n]/g,' ')+' ';if(class_exists(ele,className)){while (newClass.indexOf(' '+className+' ')>=0) newClass=newClass.replace(' '+className+' ',' ');ele.className=newClass.replace(/^\s+|\s+$/g,' ');}};
 function class_toggle(ele,className){var newClass=' '+ele.className.replace(/[\t\r\n]/g,' ')+' ';if(class_exists(ele,className)){while (newClass.indexOf(' '+className+' ')>=0) newClass=newClass.replace(' '+className+' ',' ');ele.className=newClass.replace(/^\s+|\s+$/g,' ');}else ele.className+=' '+className;};
+function preventEvent(e){if(e.preventDefault) e.preventDefault();else e.returnValue=false;}
