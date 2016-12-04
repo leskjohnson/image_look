@@ -1,0 +1,123 @@
+<html>
+
+<!-- Head _________________________________________________ -->
+	<head>
+		<!-- browser displays this webpage title -->
+		<title>Image Look</title>
+		<!-- settings for the image_look functions -->
+		<script type="text/javascript">
+			var il=null,/*set the variable for the canvas handler 'image_look'*/
+			settings={
+				'il':null,
+				'canvas':'image_look', /*id of the canvas element*/
+				'dimensions':{ /*the canvas width and height*/
+					'width':200,
+					'height':200
+				},
+				'colors':{ /*background and line color*/
+					'bg':'blue',
+					'line':'white',
+				},
+				'zigzag':{ /* zig zag loop drawing zigzags over time */
+					'autostart':true,/*start automatic zig zag on load*/
+					'delay':50, /*how much time between zig zag draws*/
+					'size':10, /*the size of the zig zag*/
+					'loop':1 /*how many zigzags to draw at a time*/
+				}
+			};
+		</script>
+	</head>
+
+<!-- Body _________________________________________________ -->
+	<body>
+
+	<!-- heading tag -->
+		<h1>Image Look</h1>
+		
+		<!-- the canvas to draw into -->
+		<canvas id="image_look"></canvas>
+		
+		<!-- buttons for actions -->
+		<div class="buttons">
+			
+			<!-- start and stop automatic zig zag creation  -->
+			<button id="il_zig_zig_auto"class="">Zig Zag Auto</button>
+			<!-- add one zig zag to th canvas -->
+			<button id="il_zig_zig"class="">Zig Zag</button>
+			<!-- clear canvas and reset the stroke start position -->
+			<button id="il_clear"class="">Clear</button>
+			<!-- open settings menu -->
+			<button id="il_settings"class="">Settings</button>
+		
+		</div>
+
+		<hr>
+
+		<!-- settings form -->
+		<form id="settings" class="settings closed">
+
+			<!-- zig zag automatic creation amount -->
+			<div class="input">
+				<label for="zigzag_size">Background Color</label>
+				<select id="zigzag_bg" name="zigzag_bg">
+					<option value="white">White</option>
+					<option value="black">Black</option>
+					<option value="red">Red</option>
+					<option value="green">Green</option>
+					<option value="blue">Blue</option>
+					<option value="purple">Purple</option>
+					<option value="pink">Pink</option>
+					<option value="yellow">Yellow</option>
+				</select>
+			</div>
+
+			<!-- zig zag automatic creation amount -->
+			<div class="input">
+				<label for="zigzag_line">Line Color</label>
+				<select id="zigzag_line" name="zigzag_line">
+					<option value="white">White</option>
+					<option value="black">Black</option>
+					<option value="red">Red</option>
+					<option value="green">Green</option>
+					<option value="blue">Blue</option>
+					<option value="purple">Purple</option>
+					<option value="pink">Pink</option>
+					<option value="yellow">Yellow</option>
+				</select>
+			</div>
+
+			<hr>
+
+			<!-- zig zag automatic creation delay -->
+			<div class="input">
+				<label for="zigzag_speed">Zig Zag Speed</label>
+				<input id="zigzag_speed" name="zigzag_speed" type="range" />
+			</div>
+
+			<!-- zig zag automatic creation amount -->
+			<div class="input">
+				<label for="zigzag_amount">Zig Zag Amount</label>
+				<input id="zigzag_amount" name="zigzag_amount" type="range" />
+			</div>
+
+			<!-- zig zag size amount -->
+			<div class="input">
+				<label for="zigzag_size">Zig Zag Size</label>
+				<input id="zigzag_size" name="zigzag_size" type="range" />
+			</div>
+
+		</form>
+
+		<hr>
+
+	</body>
+
+<!-- JavaScript ___________________________________________ -->
+	<script type="text/javascript" src="fnc.js"></script>
+	<script type="text/javascript" src="evt.js"></script>
+	<script type="text/javascript" src="image_look.js"></script>
+
+<!-- CSS __________________________________________________ -->
+	<link rel="stylesheet" type="text/css" href="image_look.css">
+
+</html>
