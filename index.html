@@ -20,7 +20,7 @@
 				},
 				'zigzag':{ /* zig zag loop drawing zigzags over time */
 					'autostart':true,/*start automatic zig zag on load*/
-					'delay':375, /*how much time between zig zag draws*/
+					'delay':125, /*how much time between zig zag draws*/
 					'size':10, /*the size of the zig zag*/
 					'loop':1 /*how many zigzags to draw at a time*/
 				}
@@ -35,23 +35,14 @@
 <!-- Body _________________________________________________ -->
 	<body>
 
-	<!-- heading tag -->
+		<!-- heading tag -->
 		<h1>Image Look</h1>
-		
-		<!-- the canvas to draw into -->
-		<canvas id="image_look"></canvas>
-		
-		<!-- buttons for actions -->
-		<div class="buttons">
-			
-			<!-- start and stop automatic zig zag creation  -->
-			<button id="il_zig_zig_auto"class="">Zig Zag Auto</button>
-			<!-- add one zig zag to th canvas -->
-			<button id="il_zig_zig"class="">Zig Zag</button>
-			<!-- clear canvas and reset the stroke start position -->
-			<button id="il_clear"class="">Clear</button>
-			<!-- open settings menu -->
-		
+
+		<!-- zig zag image_look example -->
+		<div id="example">
+			<h2>Zig Zag</h2>			
+			<!-- the canvas to draw into -->
+			<canvas id="image_look"></canvas>
 		</div>
 
 		<hr>
@@ -62,71 +53,96 @@
 			<!-- list of form elements for adding scrolling -->
 			<div class="list">
 
-				<!-- zig zag automatic creation amount -->
-				<div class="input">
-					<label for="zigzag_size">Background Color</label>
-					<select id="zigzag_bg" name="zigzag_bg">
-						<option value="white">White</option>
-						<option value="black">Black</option>
-						<option value="red">Red</option>
-						<option value="green">Green</option>
-						<option value="blue">Blue</option>
-						<option value="purple">Purple</option>
-						<option value="pink">Pink</option>
-						<option value="yellow">Yellow</option>
-					</select>
-				</div>
+				<!-- settings for the example -->
+				<div id="example_settings">
 
-				<!-- zig zag automatic creation amount -->
-				<div class="input">
-					<label for="zigzag_line">Line Color</label>
-					<select id="zigzag_line" name="zigzag_line">
-						<option value="black">Black</option>
-						<option value="white">White</option>
-						<option value="red">Red</option>
-						<option value="green">Green</option>
-						<option value="blue">Blue</option>
-						<option value="purple">Purple</option>
-						<option value="pink">Pink</option>
-						<option value="yellow">Yellow</option>
-					</select>
-				</div>
+					<!-- zig zag automatic creation amount -->
+					<div class="input">
+						<label for="zigzag_size">Background Color</label>
+						<select id="zigzag_bg" name="zigzag_bg">
+							<option value="white">White</option>
+							<option value="black">Black</option>
+							<option value="red">Red</option>
+							<option value="green">Green</option>
+							<option value="blue">Blue</option>
+							<option value="purple">Purple</option>
+							<option value="pink">Pink</option>
+							<option value="yellow">Yellow</option>
+						</select>
+					</div>
 
-				<!-- zig zag automatic creation delay -->
-				<div class="input">
-					<label for="zigzag_speed">Zig Zag Delay</label>
-					<input id="zigzag_speed" name="zigzag_speed" type="range" min="0" max="500" step="25" value="375" />
-				</div>
+					<!-- zig zag automatic creation amount -->
+					<div class="input">
+						<label for="zigzag_line">Line Color</label>
+						<select id="zigzag_line" name="zigzag_line">
+							<option value="black">Black</option>
+							<option value="white">White</option>
+							<option value="red">Red</option>
+							<option value="green">Green</option>
+							<option value="blue">Blue</option>
+							<option value="purple">Purple</option>
+							<option value="pink">Pink</option>
+							<option value="yellow">Yellow</option>
+						</select>
+					</div>
 
-				<!-- zig zag automatic creation amount -->
-				<div class="input">
-					<label for="zigzag_amount">Zig Zag Amount</label>
-					<input id="zigzag_amount" name="zigzag_amount" type="range" min="1" max="5" step="1" value="1" />
-				</div>
+					<!-- zig zag automatic creation delay -->
+					<div class="input">
+						<label for="zigzag_speed">Zig Zag Delay</label>
+						<input id="zigzag_speed" name="zigzag_speed" type="range" min="0" max="500" step="25" value="125" />
+					</div>
 
-				<!-- zig zag size amount -->
-				<div class="input">
-					<label for="zigzag_size">Zig Zag Size</label>
-					<input id="zigzag_size" name="zigzag_size" type="range" min="0" max="20" step="1" value="10" />
+					<!-- zig zag automatic creation amount -->
+					<div class="input">
+						<label for="zigzag_amount">Zig Zag Amount</label>
+						<input id="zigzag_amount" name="zigzag_amount" type="range" min="1" max="5" step="1" value="1" />
+					</div>
+
+					<!-- zig zag size amount -->
+					<!-- <div class="input">
+						<label for="zigzag_size">Zig Zag Size</label>
+						<input id="zigzag_size" name="zigzag_size" type="range" min="0" max="20" step="1" value="10" />
+					</div> -->
+
+					<!-- buttons for actions -->
+					<div class="buttons">
+						
+						<!-- start and stop automatic zig zag creation  -->
+						<button id="il_zig_zig_auto"class="">Zig Zag Auto</button>
+						<!-- add one zig zag to th canvas -->
+						<button id="il_zig_zig"class="">Zig Zag</button>
+
+					</div>
+
+				<!-- closing #example_settings -->
 				</div>
 
 				<!-- setting action buttons -->
 				<div class="buttons">
 					<button id="settings_close" class="close">Close</button>
 
-					<button id="settings_color">Theme - Black and White</button>
+					<button id="settings_color">Theme - B&W</button>
 
 					<button id="settings_modal" class="modal">Fullscreen</button>
 				</div>
+
+			<!-- closing #settings .list -->
 			</div>
 
+		<!-- closing form#settings -->
 		</form>
 
 		<hr>
 
+		<!-- current example buttons -->
 		<div class="buttons">
+			<!-- open settings menu -->
 			<button id="settings_toggle"class="toggle">Settings</button>
+			<!-- clear canvas and reset the stroke start position -->
+			<button id="il_clear"class="">Clear</button>
 		</div>
+
+	<!-- closing the body element -->
 	</body>
 
 <!-- JavaScript ___________________________________________ -->

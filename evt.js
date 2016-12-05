@@ -21,6 +21,7 @@ add_event(window,'load',function(e){
 
 /* event for when the Zig Zag button is clicked ------------------------- */
 add_event(document.getElementById('il_zig_zig'),'click',function(e){
+	preventEvent(e);
 	il.zigzag(
 		settings.zigzag.size,
 		settings.zigzag.loop
@@ -36,6 +37,7 @@ add_event(document.getElementById('il_clear'),'click',function(e){
 
 /* event for when the Zig Zag Auto button is clicked ------------------- */
 add_event(document.getElementById('il_zig_zig_auto'),'click',function(e){
+	preventEvent(e);
 	/* if the imagelook loop isn't set */
 	if(il.loop==null){
 		/* start the zig zag loop */
@@ -59,14 +61,14 @@ add_event(document.getElementById('settings_toggle'),'click',function(e){
 /* event for sliding out the settings ------ */
 add_event(document.getElementById('settings_color'),'click',function(e){
 	preventEvent(e);
-	if(class_exists(document.body,'colored')){
-		class_remove(document.body,'colored');
+	if(class_exists(document.body,'color')){
+		class_remove(document.body,'color');
 		class_remove(e.srcElement,'active');
-		e.srcElement.innerHTML='Theme - Black and White';
+		e.srcElement.innerHTML='Theme - B&W';
 	}else{
-		class_add(document.body,'colored');
+		class_add(document.body,'color');
 		class_add(e.srcElement,'active');
-		e.srcElement.innerHTML='Theme - Colors';
+		e.srcElement.innerHTML='Theme - Color';
 	}
 
 });
@@ -98,11 +100,8 @@ add_event(document.getElementById('settings_modal'),'click',function(e){
 /* event for changing the zigzag loop speed ----- */
 add_event(document.getElementById('zigzag_bg'),'input',function(e){
 	settings.colors.bg=e.srcElement.value;
-	console.log('backgound change',settings.colors.bg);
 	il.bg=settings.colors.bg;
 	il.clear();
-	il.pos.x=0;
-	il.pos.y=0;
 });
 
 /* event for changing the zigzag loop speed ----- */
@@ -123,9 +122,9 @@ add_event(document.getElementById('zigzag_amount'),'input',function(e){
 });
 
 /* event for changing the zigzag loop speed ----- */
-add_event(document.getElementById('zigzag_size'),'input',function(e){
+/*add_event(document.getElementById('zigzag_size'),'input',function(e){
 	settings.zigzag.size=e.srcElement.value;
-});
+});*/
 
 
 /* zig zag function for creating a recurring event -------------------------*/
