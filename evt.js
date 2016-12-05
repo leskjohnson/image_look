@@ -95,6 +95,39 @@ add_event(document.getElementById('settings_modal'),'click',function(e){
 	}
 });
 
+/* event for changing the zigzag loop speed ----- */
+add_event(document.getElementById('zigzag_bg'),'input',function(e){
+	settings.colors.bg=e.srcElement.value;
+	console.log('backgound change',settings.colors.bg);
+	il.bg=settings.colors.bg;
+	il.clear();
+	il.pos.x=0;
+	il.pos.y=0;
+});
+
+/* event for changing the zigzag loop speed ----- */
+add_event(document.getElementById('zigzag_line'),'input',function(e){
+	settings.colors.line=e.srcElement.value;
+	il.line=settings.colors.line;
+});
+
+/* event for changing the zigzag loop speed ----- */
+add_event(document.getElementById('zigzag_speed'),'input',function(e){
+	settings.zigzag.delay=e.srcElement.value;
+});
+
+/* event for changing the zigzag loop speed ----- */
+add_event(document.getElementById('zigzag_amount'),'input',function(e){
+	settings.zigzag.loop=e.srcElement.value;
+
+});
+
+/* event for changing the zigzag loop speed ----- */
+add_event(document.getElementById('zigzag_size'),'input',function(e){
+	settings.zigzag.size=e.srcElement.value;
+});
+
+
 /* zig zag function for creating a recurring event -------------------------*/
 function zigzagloop() {
     il.loop=window.setTimeout(function(){
